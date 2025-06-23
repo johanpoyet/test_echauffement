@@ -1,6 +1,5 @@
 const readline = require('readline');
 
-// Traductions des messages selon la langue
 const translations = {
   fr: {
     morning: 'Bonjour',
@@ -17,14 +16,6 @@ const translations = {
     goodbye_morning: 'Goodbye',
     goodbye_evening: 'Have a good evening',
     prompt: "Enter a word (or 'exit' to quit): "
-  },
-  kl: {
-    morning: 'maj poH jajlo\'',
-    evening: 'maj poH ramjep',
-    well_said: 'jatlhchu\'!',
-    goodbye_morning: 'Qapla\'',
-    goodbye_evening: 'Heghlu\'meH QaQ jajvam',
-    prompt: "tlhIngan Hol yIlo'. yIchegh ('exit'): "
   }
 };
 
@@ -44,7 +35,7 @@ const rl = readline.createInterface({
 });
 
 function askLanguage(callback) {
-  rl.question("Choisissez une langue (fr, en, kl) : ", (lang) => {
+  rl.question("Choisissez une langue (fr, en) : ", (lang) => {
     if (translations[lang]) {
       callback(lang);
     } else {
